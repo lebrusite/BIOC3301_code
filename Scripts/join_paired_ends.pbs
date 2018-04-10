@@ -11,7 +11,7 @@ source activate qiime1
 conda install -c bioconda fastq-join
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-# join reads
+# join paired end reads
 echo "Joining reads"
 time join_paired_ends.py -f Read1.fastq.gz -r Read2.fastq.gz -o ./joined -b Index.fastq.gz
 # deactivating environment
