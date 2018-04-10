@@ -3,7 +3,7 @@
 #SBATCH -n 24
 #SBATCH -p short
 
-#Load modules to run python
+# Load modules to run python
 module load eb
 module load Miniconda2
 source deactivate
