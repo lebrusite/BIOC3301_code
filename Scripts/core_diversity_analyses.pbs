@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# Core diversity analysis
+echo "Core diversity analysis of SILVA biom table"
+time core_diversity_analyses.py -i otus_closed_silva/otu_table.biom -o cdout_silva -t phylo_silva.tre -m map_complete.tsv -c SampleDepth,SampleMoisture,SamplePh,SamplePotassium,SampleNitrogen,SamplePhosphorus -e 640 -a -O 16
+source deactivate
