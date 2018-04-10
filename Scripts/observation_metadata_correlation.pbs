@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# Determine if there is metadata correlation
+echo "Metadata correlation analysis"
+time observation_metadata_correlation.py -i taxa_summary_silva/otu_table_L2.biom -o Depth_correlation_L2.txt -m map_complete.tsv -c SampleDepth -s pearson --permutations 100 --pval_assignment_method bootstrapped
+source deactivate
