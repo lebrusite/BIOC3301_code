@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH -p short
+#SBATCH -n 16
+#SBATCH -t 1:00:00
+
+# load modules to run python
+module load eb
+module load Miniconda2
+module load R/3.3.1-intel-2016b
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# compare categories
+echo "Comparing categories"
+time compare_categories.py --method adonis -i cdout_silva/bdiv_even640/unweighted_unifrac_dm.txt -m map_complete.tsv -c SampleDepth -o comparison_depth_unifrac_adonis
+source deactivate
+~
