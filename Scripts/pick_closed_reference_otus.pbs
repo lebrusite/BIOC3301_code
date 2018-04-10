@@ -12,7 +12,7 @@ echo "loading virtualenv"
 source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-# picking OTUs with SILVA database
+# closed reference OTU picking with SILVA database
 echo "Picking OTUs, closed reference, SILVA"
 time pick_closed_reference_otus.py -i ./slout/seqs.fna -o ./otus_closed_silva -r SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta -t SILVA_128_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_7_levels.txt -a -O 24
 source deactivate
