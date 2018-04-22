@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH -p short
+#SBATCH -n 16
+#SBATCH -t 1:00:00
+#Load modules to run python
+module load eb
+module load Miniconda2
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# align sequences
+echo "Aligning sequences"
+time align_seqs.py -i rep_set_silva.fna -t SILVA_128_QIIME_release/rep_set_aligned/97/97_otus_aligned.fasta -o pynast_aligned_silva
+source deactivate
