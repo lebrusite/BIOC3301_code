@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH -p short
+#SBATCH -n 16
+#SBATCH -t 1:00:00
+#Load modules to run python
+module load eb
+module load Miniconda2
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# filter aligment
+echo "Filtering aligment"
+time filter_alignment.py -i pynast_aligned_silva/rep_set_silva_aligned.fasta -o filtered_aligment --remove_outliers
+source deactivate
