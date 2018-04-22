@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+#Load modules to run python
+module load eb
+module load Miniconda2
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# make phylogeny
+echo "Making Phylogeny"
+time make_phylogeny.py -i filtered_aligment/rep_set_silva_aligned_pfiltered.fasta -o phylo_silva.tre
+source deactivate
