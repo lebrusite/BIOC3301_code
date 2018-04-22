@@ -16,6 +16,41 @@ In this step the reads are assigned to samples based on their barcode (demultipl
 ### Step 1. Pick OTUs
 Here we run the pick_closed_reference_otus.py script, wich picks OTUs using closed reference and constructs an OTU table. OTU picking is done against a reference database, e.g. SILVA, Greengenes, and those sequences that do not match the database are discarded from the analysis. 
 ### Step 2. Summarise OTU table
+To view the statistics of the OTU table we run:
+```biom summarize-table -i otus/otu_table.biom```
+The following results were generated:
+```Num samples: 30
+Num observations: 16176
+Total count: 4617705
+Table density (fraction of non-zero values): 0.258
+Counts/sample summary:
+ Min: 640.0
+ Max: 1467043.0
+ Median: 110746.500
+ Mean: 153923.500
+ Std. dev.: 248373.010
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: taxonomy
+Counts/sample detail:
+515rcbc20: 640.0
+515rcbc36: 34859.0
+515rcbc8: 41831.0
+515rcbc13: 60071.0
+515rcbc34: 62599.0
+515rcbc37: 62873.0
+515rcbc9: 66575.0
+515rcbc27: 70604.0
+515rcbc23: 74817.0
+515rcbc35: 89390.0
+515rcbc32: 92499.0
+515rcbc11: 98214.0
+515rcbc33: 105672.0
+515rcbc15: 106731.0
+515rcbc17: 107850.0
+515rcbc18: 113643.0
+515rcbc28: 114903.0
+```
+Alternatively --qualitative can be passed to get the number of OTUs per sample
 ### Step 3. Pick a representative sequence from each OTU
 ### Step 4. Aling OTU representative sequences
 ### Step 5. Build a phylogenetic tree
