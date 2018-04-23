@@ -18,7 +18,7 @@ Here we run the ```pick_closed_reference_otus.py``` script, wich picks OTUs usin
 ### Step 2. Summarise OTU table
 To view the statistics of the OTU table we run:
 ```biom summarize-table -i otus/otu_table.biom```
-The following results were generated:
+The following results were generated from closed reference OTU picking against the SILVA 128 database:
 ```Num samples: 30
 Num observations: 16176
 Total count: 4617705
