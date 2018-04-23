@@ -4,6 +4,7 @@
 The repository contains the following directories:  
 * 'Scripts': QIIME scripts developed for the meta analysis of 16S rRNA sequencing data in the Cartesius supercomputer. 
 * 'Data': data files used for processing and downstream analysis. 
+* 'Results': text files with results obtained from running the scripts with the sequencing data.
 ## 1. Obtaining the data
 All the files used for data analyses including the raw sequencing data and the mapping file can be downloaded from the Data folder. Remember to unzip the sequencing data with the ```gzip``` command. 
 ### Mapping file (tab-delimited .txt)
