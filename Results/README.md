@@ -1,1 +1,1 @@
-This folder contains the results obtained for all the analyses run (please refer to the Scripts folder to see all the anlyses performed) on the sequencing data.
+This folder contains the results obtained for all the analyses run (please refer to the Scripts folder to see all the analyses performed) on the sequencing data.
