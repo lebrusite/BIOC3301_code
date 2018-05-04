@@ -64,8 +64,10 @@ The filtered alignment produced above was used to generate a phylogenetic tree u
 Taxonomy was assigned to each rep OTU sequence using an RDP classifier using the script: ```assign_taxonomy.py```. A text file is generated, which contains the taxonomic assingment for each OTU. For some OTUs the assignment was possible at the species level but for others this was not possible.
 ### Group OTUs by taxonomic composition 
 OTUs were grouped by phylum with the script ```summarize_taxa.py```. This script allows to generate a new table at the phylum level, which contains the relative abundances of taxa within each sample. 
+![tree](https://github.com/lebrusite/BIOC3301_code/blob/master/Results/taxa_summary.png) 
+Tables for microbial phyla abundace classified according to different metadata categories (soil pH, potassium, phosphorus and nitrogen content) were also generated. 
 ### Correlation between taxonomy and metadata categories
- The script ```observation_metadata_correlation.py``` was used to calculate the correlation between taxonomy and some of the metadata categories (pH, nitrogen, potassium, phosphorus). 
+ The script ```observation_metadata_correlation.py``` was used to calculate the correlation between microbial phyla and some of the metadata categories (soil pH, nitrogen, potassium, phosphorus). 
 ## Alpha and beta diversity analysis
 The workflow script ```core_diversity_analyses.py``` was used to determine the alpha and beta diversity measures for the samples. 
 ### Alpha diversity correlation
